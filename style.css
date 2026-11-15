@@ -7,7 +7,7 @@
 
 :root {
     --primary-color: #2c4a3e;
-    --accent-color: #6b8e23;
+    --accent-color: #27ae60;
     --light-bg: #f4f7f4;
     --text-color: #333333;
     --text-light: #666666;
@@ -107,7 +107,7 @@ body {
 }
 
 .btn:hover {
-    background-color: #5c7b1c;
+    background-color: #219653;
 }
 
 /* Sections General */
