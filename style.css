@@ -108,6 +108,19 @@ body {
 
 .btn:hover {
     background-color: #219653;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+    background-color: var(--primary-color);
+    margin-top: 1rem;
+}
+
+.btn-secondary:hover {
+    background-color: #1f342b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* Sections General */
