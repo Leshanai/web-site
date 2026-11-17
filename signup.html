@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Serene Leaf Tea House</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .signup-section {
+            padding: 5rem 0;
+            background-color: var(--light-bg);
+            min-height: calc(100vh - 160px);
+            display: flex;
+            align-items: center;
+        }
+        .signup-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        .signup-container h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: var(--white);
+            color: var(--text-color);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.15);
+        }
+        .form-group input.error {
+            border-color: #e74c3c;
+        }
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.85rem;
+            margin-top: 0.35rem;
+            display: none;
+        }
+        .form-group.has-error .error-message {
+            display: block;
+        }
+        .signup-btn {
+            width: 100%;
+            margin-top: 1rem;
+            padding: 0.85rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            position: relative;
+        }
+        .signup-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+        .success-message {
+            background-color: rgba(39, 174, 96, 0.1);
+            border: 1px solid var(--accent-color);
+            color: var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 6px;
+            text-align: center;
+            margin-top: 1.5rem;
+            display: none;
+        }
+        .success-message h3 {
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+        .login-link a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="logo">Serene Leaf Tea House</h1>
+            <nav class="site-nav">
+                <a href="index.html">Home</a>
+                <a href="index.html#teas">Featured Teas</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="signup.html" class="active">Sign Up</a>
+                <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode">🌓</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="signup-section">
+            <div class="container">
+                <div class="signup-container">
+                    <h2>Create Account</h2>
+                    <form id="signup-form" novalidate>
+                        <div class="form-group" id="group-fullname">
+                            <label for="fullname">Full Name</label>
+                            <input type="text" id="fullname" name="fullname" placeholder="Jane Doe" required>
+                            <div class="error-message" id="error-fullname">Please enter your full name.</div>
+                        </div>
+
+                        <div class="form-group" id="group-email">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+                            <div class="error-message" id="error-email">Please enter a valid email address.</div>
+                        </div>
+
+                        <div class="form-group" id="group-password">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" placeholder="At least 6 characters" required>
+                            <div class="error-message" id="error-password">Password must be at least 6 characters.</div>
+                        </div>
+
+                        <div class="form-group" id="group-confirmpassword">
+                            <label for="confirmpassword">Confirm Password</label>
+                            <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Re-enter password" required>
+                            <div class="error-message" id="error-confirmpassword">Passwords do not match.</div>
+                        </div>
+
+                        <button type="submit" class="btn signup-btn" id="submit-btn">Create Account</button>
+                    </form>
+
+                    <div class="success-message" id="success-message">
+                        <h3>Welcome to Serene Leaf!</h3>
+                        <p>Your account has been successfully created. You can now explore our organic collection.</p>
+                        <a href="index.html" class="btn btn-secondary" style="margin-top: 1rem;">Return to Home</a>
+                    </div>
+
+                    <div class="login-link">
+                        Already have an account? <a href="index.html#contact">Contact us</a> or <a href="index.html">Return Home</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 Serene Leaf Tea House. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode toggle
+        const toggleButton = document.getElementById('dark-mode-toggle');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        // Form validation & submission simulation
+        const form = document.getElementById('signup-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const successMessage = document.getElementById('success-message');
+
+        function setError(fieldId, message) {
+            const group = document.getElementById(`group-${fieldId}`);
+            const input = document.getElementById(fieldId);
+            const errorDiv = document.getElementById(`error-${fieldId}`);
+            group.classList.add('has-error');
+            input.classList.add('error');
+            if (message) {
+                errorDiv.textContent = message;
+            }
+        }
+
+        function clearError(fieldId) {
+            const group = document.getElementById(`group-${fieldId}`);
+            const input = document.getElementById(fieldId);
+            group.classList.remove('has-error');
+            input.classList.remove('error');
+        }
+
+        function isValidEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        // Live validation on input/blur
+        ['fullname', 'email', 'password', 'confirmpassword'].forEach(fieldId => {
+            const input = document.getElementById(fieldId);
+            input.addEventListener('input', () => {
+                if (input.value.trim() !== '') {
+                    if (fieldId === 'email' && !isValidEmail(input.value)) {
+                        return; // keep error until blur or submit or corrected
+                    }
+                    if (fieldId === 'confirmpassword') {
+                        const pwd = document.getElementById('password').value;
+                        if (input.value === pwd) {
+                            clearError('confirmpassword');
+                        }
+                        return;
+                    }
+                    if (fieldId === 'password') {
+                        const confirmInput = document.getElementById('confirmpassword');
+                        if (confirmInput.value && confirmInput.value === input.value) {
+                            clearError('confirmpassword');
+                        }
+                    }
+                    clearError(fieldId);
+                }
+            });
+        });
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            let isValid = true;
+            const fullname = document.getElementById('fullname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmpassword = document.getElementById('confirmpassword').value;
+
+            // Full Name validation
+            if (!fullname) {
+                setError('fullname', 'Please enter your full name.');
+                isValid = false;
+            } else {
+                clearError('fullname');
+            }
+
+            // Email validation
+            if (!email) {
+                setError('email', 'Please enter your email address.');
+                isValid = false;
+            } else if (!isValidEmail(email)) {
+                setError('email', 'Please enter a valid email address (e.g., jane@example.com).');
+                isValid = false;
+            } else {
+                clearError('email');
+            }
+
+            // Password validation
+            if (!password) {
+                setError('password', 'Please enter a password.');
+                isValid = false;
+            } else if (password.length < 6) {
+                setError('password', 'Password must be at least 6 characters.');
+                isValid = false;
+            } else {
+                clearError('password');
+            }
+
+            // Confirm Password validation
+            if (!confirmpassword) {
+                setError('confirmpassword', 'Please confirm your password.');
+                isValid = false;
+            } else if (password !== confirmpassword) {
+                setError('confirmpassword', 'Passwords do not match.');
+                isValid = false;
+            } else {
+                clearError('confirmpassword');
+            }
+
+            if (!isValid) {
+                return;
+            }
+
+            // Simulate loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Creating Account...';
+
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Create Account';
+                form.style.display = 'none';
+                successMessage.style.display = 'block';
+            }, 1200);
+        });
+    </script>
+</body>
+</html>
